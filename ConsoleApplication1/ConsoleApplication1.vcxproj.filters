@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\App">
+      <UniqueIdentifier>{5ee8f3d9-24a6-4b9d-a706-399aaa5141df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\App\Buttons">
+      <UniqueIdentifier>{dfe00b7a-217b-4598-9418-6d3eb993690e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\App\Display">
+      <UniqueIdentifier>{f0a5e4af-8d35-4ff4-b6b1-6107500357bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MVP">
+      <UniqueIdentifier>{c5c928e9-1762-4a35-aec0-95c14787668a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MVP\Start">
+      <UniqueIdentifier>{6657827a-9764-437d-9c41-bd321f03fb41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MVP\Main">
+      <UniqueIdentifier>{f417199d-fbba-4a57-bf44-511cd50c04fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MVP\Process">
+      <UniqueIdentifier>{c840ac77-7c4a-4301-84a4-6131c463935c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MVP\ProfileInfo">
+      <UniqueIdentifier>{ff4b4d1a-dbab-489e-96bf-36b2872fada9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MVP\Dialog">
+      <UniqueIdentifier>{6cf66eea-a7a6-4377-94e8-fde79e1aa596}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules">
+      <UniqueIdentifier>{ef6a1ac8-bc7e-4c0a-9df5-bf0f9fd583e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\Buttons">
+      <UniqueIdentifier>{f2188dbb-b3cf-4607-a167-f504a7f3aa7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MVP\Models">
+      <UniqueIdentifier>{1b17a95f-69d0-4e96-b0d5-2c75673c4672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\PID">
+      <UniqueIdentifier>{8581e2f6-3352-4e49-8f83-9ad289d78318}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\App\PID">
+      <UniqueIdentifier>{016077e6-0229-47aa-bff8-7f5530bab6b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\App\Oven">
+      <UniqueIdentifier>{51b3de62-43dc-473e-9d31-1ddaeaec2a1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MVP\ProfilesList">
+      <UniqueIdentifier>{38a73e9b-5c29-4e6a-938c-fc57dbb3a9b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\App\TimeStamp">
+      <UniqueIdentifier>{dae744a6-e3fe-4aba-8c54-38729f4eb67a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Activities">
+      <UniqueIdentifier>{4b903e09-4a91-4699-a858-6a502b6efa18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Activities\Manager">
+      <UniqueIdentifier>{ef66bd8d-9e08-4fc4-b187-60d671ca848e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ConsoleApplication1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ap_buttons.cpp">
+      <Filter>Source Files\App\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="ap_console_display.cpp">
+      <Filter>Source Files\App\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Main\main_presenter.cpp">
+      <Filter>Source Files\MVP\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Process\process_presenter.cpp">
+      <Filter>Source Files\MVP\Process</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Buttons\buttons.cpp">
+      <Filter>Source Files\Modules\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Common\Model\oven_processor.cpp">
+      <Filter>Source Files\MVP\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Common\Model\profiles.cpp">
+      <Filter>Source Files\MVP\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Regulator\pid_regulator.cpp">
+      <Filter>Source Files\Modules\PID</Filter>
+    </ClCompile>
+    <ClCompile Include="ap_oven.cpp">
+      <Filter>Source Files\App\Oven</Filter>
+    </ClCompile>
+    <ClCompile Include="ap_storage.cpp">
+      <Filter>Source Files\App\Oven</Filter>
+    </ClCompile>
+    <ClCompile Include="ap_time_stamp.cpp">
+      <Filter>Source Files\App\TimeStamp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Activity\activity_manager.cpp">
+      <Filter>Source Files\Activities\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Activity\main_activity.cpp">
+      <Filter>Source Files\Activities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Activity\process_activity.cpp">
+      <Filter>Source Files\Activities</Filter>
+    </ClCompile>
+    <ClCompile Include="oven_activities_manager.cpp">
+      <Filter>Source Files\Activities\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="profiles_list_activity.cpp">
+      <Filter>Source Files\Activities</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ap_buttons.h">
+      <Filter>Source Files\App\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="ap_console_display.h">
+      <Filter>Source Files\App\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Main\main_presenter.h">
+      <Filter>Source Files\MVP\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Process\process_presenter.h">
+      <Filter>Source Files\MVP\Process</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Common\Model\oven_processor.h">
+      <Filter>Source Files\MVP\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Common\Model\profiles.h">
+      <Filter>Source Files\MVP\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Regulator\pid_regulator.h">
+      <Filter>Source Files\Modules\PID</Filter>
+    </ClInclude>
+    <ClInclude Include="ap_oven.h">
+      <Filter>Source Files\App\Oven</Filter>
+    </ClInclude>
+    <ClInclude Include="ap_storage.h">
+      <Filter>Source Files\App\Oven</Filter>
+    </ClInclude>
+    <ClInclude Include="ap_time_stamp.h">
+      <Filter>Source Files\App\TimeStamp</Filter>
+    </ClInclude>
+    <ClInclude Include="oven_activities_manager.h">
+      <Filter>Source Files\Activities\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="profiles_list_activity.h">
+      <Filter>Source Files\Activities</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
