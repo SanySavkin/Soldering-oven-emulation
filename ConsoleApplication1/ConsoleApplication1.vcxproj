@@ -150,11 +150,13 @@
     <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Activity\activity_manager.cpp" />
     <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Activity\main_activity.cpp" />
     <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Activity\process_activity.cpp" />
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Activity\profiles_list_activity.cpp" />
     <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Buttons\buttons.cpp" />
     <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Common\Model\oven_processor.cpp" />
     <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Common\Model\profiles.cpp" />
     <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Main\main_presenter.cpp" />
     <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Process\process_presenter.cpp" />
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\ProfilesList\profile_list_prsenter.cpp" />
     <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Regulator\pid_regulator.cpp" />
     <ClCompile Include="ap_buttons.cpp" />
     <ClCompile Include="ap_console_display.cpp" />
@@ -163,13 +165,13 @@
     <ClCompile Include="ap_time_stamp.cpp" />
     <ClCompile Include="ConsoleApplication1.cpp" />
     <ClCompile Include="oven_activities_manager.cpp" />
-    <ClCompile Include="profiles_list_activity.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Common\Model\oven_processor.h" />
     <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Common\Model\profiles.h" />
     <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Main\main_presenter.h" />
     <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Process\process_presenter.h" />
+    <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\ProfilesList\profile_list_prsenter.h" />
     <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Regulator\pid_regulator.h" />
     <ClInclude Include="ap_buttons.h" />
     <ClInclude Include="ap_console_display.h" />
@@ -177,7 +179,6 @@
     <ClInclude Include="ap_storage.h" />
     <ClInclude Include="ap_time_stamp.h" />
     <ClInclude Include="oven_activities_manager.h" />
-    <ClInclude Include="profiles_list_activity.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

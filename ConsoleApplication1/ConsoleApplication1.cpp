@@ -10,9 +10,11 @@
 #include "Main/Contracts/imain_view.h"
 #include "buttons.h"
 #include "Main/main_presenter.h"
+#include "ProfilesList/profile_list_prsenter.h"
 #include "Activity/activity_manager.h"
 #include "Activity/main_activity.h"
 #include "Activity/proceess_activity.h"
+#include "Activity/profiles_list_activity.h"
 #include "Process/process_presenter.h"
 #include "Process/Contracts/iprocess_model.h"
 #include "ap_console_display.h"
@@ -43,9 +45,12 @@ Buttons buttons(TimeStamp::GetMillis, &btnDrv);
 
 MainActivity mainAct(&display, &buttons);
 ProcessActivity procAct(&display, &buttons);
+ProfilesListActivity profListAct(&display, &buttons);
 
 MainPresenter mainPres(&oven, &mainAct);
 ProcessPresenter procPres(&oven, &procAct);
+ProfilesListPresenter profListPres(&prof, &profListAct);
+
 
 Pid pid(6, 2, 0.9, 200);
 
@@ -54,7 +59,9 @@ int main()
     TimeStamp::Init();
     oven.SetPid(&pid);
     prof.Read();
-    ActManager::StartActivity(ACTIVITY_MAIN);
+    prof.SetProfile(2);
+    //ActManager::StartActivity(ACTIVITY_MAIN);
+    ActManager::StartActivity(ACTIVITY_PROFILES_LIST);
 
     while (1)
     {

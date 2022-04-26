@@ -120,16 +120,16 @@
     <ClCompile Include="oven_activities_manager.cpp">
       <Filter>Source Files\Activities\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="profiles_list_activity.cpp">
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\ProfilesList\profile_list_prsenter.cpp">
+      <Filter>Source Files\MVP\ProfilesList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Activity\profiles_list_activity.cpp">
       <Filter>Source Files\Activities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ap_buttons.h">
       <Filter>Source Files\App\Buttons</Filter>
-    </ClInclude>
-    <ClInclude Include="ap_console_display.h">
-      <Filter>Source Files\App\Display</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Main\main_presenter.h">
       <Filter>Source Files\MVP\Main</Filter>
@@ -146,20 +146,23 @@
     <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Regulator\pid_regulator.h">
       <Filter>Source Files\Modules\PID</Filter>
     </ClInclude>
-    <ClInclude Include="ap_oven.h">
-      <Filter>Source Files\App\Oven</Filter>
-    </ClInclude>
-    <ClInclude Include="ap_storage.h">
-      <Filter>Source Files\App\Oven</Filter>
-    </ClInclude>
     <ClInclude Include="ap_time_stamp.h">
       <Filter>Source Files\App\TimeStamp</Filter>
     </ClInclude>
     <ClInclude Include="oven_activities_manager.h">
       <Filter>Source Files\Activities\Manager</Filter>
     </ClInclude>
-    <ClInclude Include="profiles_list_activity.h">
-      <Filter>Source Files\Activities</Filter>
+    <ClInclude Include="ap_console_display.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ap_oven.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ap_storage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\ProfilesList\profile_list_prsenter.h">
+      <Filter>Source Files\MVP\ProfilesList</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
