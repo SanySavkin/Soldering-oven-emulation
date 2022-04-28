@@ -126,6 +126,12 @@
     <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Activity\profiles_list_activity.cpp">
       <Filter>Source Files\Activities</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Activity\profiles_info_activity.cpp">
+      <Filter>Source Files\Activities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\ProfileInfo\profile_info_presenter.cpp">
+      <Filter>Source Files\MVP\ProfileInfo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ap_buttons.h">

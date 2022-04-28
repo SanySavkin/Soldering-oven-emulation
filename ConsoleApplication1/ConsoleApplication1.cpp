@@ -11,10 +11,12 @@
 #include "buttons.h"
 #include "Main/main_presenter.h"
 #include "ProfilesList/profile_list_prsenter.h"
+#include "ProfileInfo/profile_info_presenter.h"
 #include "Activity/activity_manager.h"
 #include "Activity/main_activity.h"
 #include "Activity/proceess_activity.h"
 #include "Activity/profiles_list_activity.h"
+#include "Activity/profiles_info_activity.h"
 #include "Process/process_presenter.h"
 #include "Process/Contracts/iprocess_model.h"
 #include "ap_console_display.h"
@@ -46,13 +48,15 @@ Buttons buttons(TimeStamp::GetMillis, &btnDrv);
 MainActivity mainAct(&display, &buttons);
 ProcessActivity procAct(&display, &buttons);
 ProfilesListActivity profListAct(&display, &buttons);
+ProfilesInfoActivity profInfoAct(&display, &buttons);
 
 MainPresenter mainPres(&oven, &mainAct);
 ProcessPresenter procPres(&oven, &procAct);
 ProfilesListPresenter profListPres(&prof, &profListAct);
+ProfilesInfoPresenter profInfoPres(&prof, &profInfoAct);
 
 
-Pid pid(6, 2, 0.9, 200);
+Pid pid(6, 2, 0.9f, 200);
 
 int main()
 {
@@ -60,15 +64,14 @@ int main()
     oven.SetPid(&pid);
     prof.Read();
     prof.SetProfile(2);
-    //ActManager::StartActivity(ACTIVITY_MAIN);
-    ActManager::StartActivity(ACTIVITY_PROFILES_LIST);
+    ActManager::StartActivity(ACTIVITY_MAIN);
 
     while (1)
     {
         buttons.Process();
         oven.Process();
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
         UpdateView();
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
 }
 
@@ -76,7 +79,7 @@ int main()
 static void UpdateView()
 {
     static uint32_t prevTime = 0;
-    if (TimeStamp::GetMillis() - prevTime < 200) return;
+    if (TimeStamp::GetMillis() - prevTime < 500) return;
     prevTime = TimeStamp::GetMillis();
 
     ActManager::Update();
