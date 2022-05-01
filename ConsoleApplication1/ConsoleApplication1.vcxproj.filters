@@ -70,6 +70,12 @@
     <Filter Include="Source Files\Activities\Manager">
       <UniqueIdentifier>{ef66bd8d-9e08-4fc4-b187-60d671ca848e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\MVP\Error">
+      <UniqueIdentifier>{9e9b7a51-1608-4d97-83d2-e7e291033f2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MVP\Wifi">
+      <UniqueIdentifier>{8d8ae64a-2233-41b0-91a3-148c7803b51b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleApplication1.cpp">
@@ -131,6 +137,21 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\ProfileInfo\profile_info_presenter.cpp">
       <Filter>Source Files\MVP\ProfileInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Activity\error_activity.cpp">
+      <Filter>Source Files\Activities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Error\error_presenter.cpp">
+      <Filter>Source Files\MVP\Error</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Activity\wifi_activity.cpp">
+      <Filter>Source Files\Activities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Wifi\wifi_presenter.cpp">
+      <Filter>Source Files\MVP\Wifi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Common\Model\wifi_model.cpp">
+      <Filter>Source Files\MVP\Models</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -9,18 +9,26 @@
 
 #include "Main/Contracts/imain_view.h"
 #include "buttons.h"
+
 #include "Main/main_presenter.h"
+#include "Error/error_presenter.h"
 #include "ProfilesList/profile_list_prsenter.h"
 #include "ProfileInfo/profile_info_presenter.h"
+#include "Process/process_presenter.h"
+#include "Wifi/wifi_presenter.h"
+
 #include "Activity/activity_manager.h"
 #include "Activity/main_activity.h"
 #include "Activity/proceess_activity.h"
 #include "Activity/profiles_list_activity.h"
 #include "Activity/profiles_info_activity.h"
-#include "Process/process_presenter.h"
+#include "Activity/error_activity.h"
+#include "Activity/wifi_activity.h"
+
 #include "Process/Contracts/iprocess_model.h"
 #include "ap_console_display.h"
 #include "oven_activities_manager.h"
+#include "Common/Model/wifi_model.h"
 
 #include <Windows.h>
 #include <thread>
@@ -39,6 +47,7 @@ RamStorage stor;
 OvenControl ovProc;
 Profiles prof(&stor);
 Oven oven(&ovProc, &prof);
+WifiModel wifiModel;
 
 MainDisplay display;
 
@@ -49,11 +58,15 @@ MainActivity mainAct(&display, &buttons);
 ProcessActivity procAct(&display, &buttons);
 ProfilesListActivity profListAct(&display, &buttons);
 ProfilesInfoActivity profInfoAct(&display, &buttons);
+ErrorActivity errorAct(&display, &buttons);
+WifiActivity wifiAct(&display, &buttons);
 
 MainPresenter mainPres(&oven, &mainAct);
 ProcessPresenter procPres(&oven, &procAct);
 ProfilesListPresenter profListPres(&prof, &profListAct);
 ProfilesInfoPresenter profInfoPres(&prof, &profInfoAct);
+ErrorPresenter errorPres(&oven, &errorAct);
+WifiPresenter wifiPres(&wifiModel, &wifiAct);
 
 
 Pid pid(6, 2, 0.9f, 200);
@@ -64,7 +77,7 @@ int main()
     oven.SetPid(&pid);
     prof.Read();
     prof.SetProfile(2);
-    ActManager::StartActivity(ACTIVITY_MAIN);
+    ActManager::StartActivity(ACTIVITY_WIFI);
 
     while (1)
     {
@@ -79,7 +92,7 @@ int main()
 static void UpdateView()
 {
     static uint32_t prevTime = 0;
-    if (TimeStamp::GetMillis() - prevTime < 500) return;
+    if (TimeStamp::GetMillis() - prevTime < 200) return;
     prevTime = TimeStamp::GetMillis();
 
     ActManager::Update();
