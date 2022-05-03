@@ -8,12 +8,12 @@
 class RamStorage : public DStorage::IStorage
 {
 private:
-    static uint8_t buf[4096];
+    static uint8_t buf[8182];
 public:
     RamStorage();
     bool Read(uint32_t addr, void* buf, uint32_t len) override;
     bool Write(uint32_t addr, void* data, uint32_t len) override;
-    bool Erase(uint32_t address, uint32_t len) override;
+    bool Remove(uint32_t address, uint32_t len) override;
 };
 
 

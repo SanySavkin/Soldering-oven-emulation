@@ -2,9 +2,10 @@
 #include "string.h"
 
 #include "Common/Model/profiles.h"
+#include "storage_map.h"
 
 
-uint8_t RamStorage::buf[4096] = {};
+uint8_t RamStorage::buf[8182] = {};
 
 Profile_t prof[15] =
 {
@@ -25,11 +26,31 @@ Profile_t prof[15] =
 	{{'p','r','o','f','i','l','e','_','1','5'}, {{45, 4},{120, 7},{170, 13},{240, 16},{274, 17},{180, 23}, {110, 26},{42, 31}}}
 };
 
+typedef struct 
+{
+	char ssid[20];
+	char psw[20];
+	uint8_t securityIdx;
+}WiFi;
+
+WiFi wifi = { {'t','e','s','t'}, {'1','2','3','4'}, 4};
+
+typedef struct
+{
+	float kp;
+	float ki;
+	float kd;
+	uint32_t dt;
+}Pid;
+
+Pid pid = {3.2f, 1.4f, 0.3f, 200};
 
 RamStorage::RamStorage()
 {
 	//debug start
-	memcpy(buf, prof, sizeof(prof));
+	memcpy(buf + StrorageMap::PROFILES, prof, sizeof(prof));
+	memcpy(buf + StrorageMap::WIFI, &wifi, sizeof(wifi));
+	memcpy(buf + StrorageMap::PID, &pid, sizeof(pid));
 	//debug end
 }
 
@@ -45,7 +66,7 @@ bool RamStorage::Write(uint32_t addr, void* data, uint32_t len)
 	return true;
 }
 
-bool RamStorage::Erase(uint32_t addr, uint32_t len)
+bool RamStorage::Remove(uint32_t addr, uint32_t len)
 {
 	memset(buf + addr, 0xFF, len);
 	return true;

@@ -16,6 +16,8 @@
 #include "ProfileInfo/profile_info_presenter.h"
 #include "Process/process_presenter.h"
 #include "Wifi/wifi_presenter.h"
+#include "Settings/settings_presenter.h"
+#include "Pid/pid_presenter.h"
 
 #include "Activity/activity_manager.h"
 #include "Activity/main_activity.h"
@@ -24,11 +26,14 @@
 #include "Activity/profiles_info_activity.h"
 #include "Activity/error_activity.h"
 #include "Activity/wifi_activity.h"
+#include "Activity/settings_activity.h"
+#include "Activity/pid_activity.h"
 
 #include "Process/Contracts/iprocess_model.h"
 #include "ap_console_display.h"
 #include "oven_activities_manager.h"
 #include "Common/Model/wifi_model.h"
+#include "Common//Model/pid_model.h"
 
 #include <Windows.h>
 #include <thread>
@@ -47,7 +52,8 @@ RamStorage stor;
 OvenControl ovProc;
 Profiles prof(&stor);
 Oven oven(&ovProc, &prof);
-WifiModel wifiModel;
+WifiModel wifiModel(&stor);
+PidModel pidModel(&stor);
 
 MainDisplay display;
 
@@ -60,6 +66,8 @@ ProfilesListActivity profListAct(&display, &buttons);
 ProfilesInfoActivity profInfoAct(&display, &buttons);
 ErrorActivity errorAct(&display, &buttons);
 WifiActivity wifiAct(&display, &buttons);
+SettingsActivity setAct(&display, &buttons);
+PidActivity pidAct(&display, &buttons);
 
 MainPresenter mainPres(&oven, &mainAct);
 ProcessPresenter procPres(&oven, &procAct);
@@ -67,6 +75,8 @@ ProfilesListPresenter profListPres(&prof, &profListAct);
 ProfilesInfoPresenter profInfoPres(&prof, &profInfoAct);
 ErrorPresenter errorPres(&oven, &errorAct);
 WifiPresenter wifiPres(&wifiModel, &wifiAct);
+SettingsPresenter setPres(&setAct);
+PidPresenter pidPres(&pidModel, &pidAct);
 
 
 Pid pid(6, 2, 0.9f, 200);
@@ -76,8 +86,10 @@ int main()
     TimeStamp::Init();
     oven.SetPid(&pid);
     prof.Read();
+    wifiModel.Read();
+    pidModel.Read();
     prof.SetProfile(2);
-    ActManager::StartActivity(ACTIVITY_WIFI);
+    ActManager::StartActivity(ACTIVITY_MAIN);
 
     while (1)
     {

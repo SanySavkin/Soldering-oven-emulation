@@ -76,6 +76,15 @@
     <Filter Include="Source Files\MVP\Wifi">
       <UniqueIdentifier>{8d8ae64a-2233-41b0-91a3-148c7803b51b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\MVP\Settings">
+      <UniqueIdentifier>{9bc129e9-f83e-4d3b-8048-66097ec1ca2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\App\Storage">
+      <UniqueIdentifier>{04a7dbef-3351-4952-bb4f-90a2d0a2f760}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MVP\Pid">
+      <UniqueIdentifier>{4327fb5c-3aff-4e1c-b720-8ba40ce74770}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleApplication1.cpp">
@@ -102,13 +111,7 @@
     <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Common\Model\profiles.cpp">
       <Filter>Source Files\MVP\Models</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Regulator\pid_regulator.cpp">
-      <Filter>Source Files\Modules\PID</Filter>
-    </ClCompile>
     <ClCompile Include="ap_oven.cpp">
-      <Filter>Source Files\App\Oven</Filter>
-    </ClCompile>
-    <ClCompile Include="ap_storage.cpp">
       <Filter>Source Files\App\Oven</Filter>
     </ClCompile>
     <ClCompile Include="ap_time_stamp.cpp">
@@ -144,14 +147,35 @@
     <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Error\error_presenter.cpp">
       <Filter>Source Files\MVP\Error</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Activity\wifi_activity.cpp">
-      <Filter>Source Files\Activities</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Wifi\wifi_presenter.cpp">
       <Filter>Source Files\MVP\Wifi</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Common\Model\wifi_model.cpp">
       <Filter>Source Files\MVP\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Activity\settings_activity.cpp">
+      <Filter>Source Files\Activities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Settings\settings_presenter.cpp">
+      <Filter>Source Files\MVP\Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="ap_storage.cpp">
+      <Filter>Source Files\App\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Regulator\pid_regulator.cpp">
+      <Filter>Source Files\Modules\PID</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Common\Model\pid_model.cpp">
+      <Filter>Source Files\MVP\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Pid\pid_presenter.cpp">
+      <Filter>Source Files\MVP\Pid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Activity\wifi_activity.cpp">
+      <Filter>Source Files\Activities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Activity\pid_activity.cpp">
+      <Filter>Source Files\Activities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -170,9 +194,6 @@
     <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\Common\Model\profiles.h">
       <Filter>Source Files\MVP\Models</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\Regulator\pid_regulator.h">
-      <Filter>Source Files\Modules\PID</Filter>
-    </ClInclude>
     <ClInclude Include="ap_time_stamp.h">
       <Filter>Source Files\App\TimeStamp</Filter>
     </ClInclude>
@@ -190,6 +211,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\Work\HelloUkraine\PidOven\Program\SolderingOven\Src\MVP\ProfilesList\profile_list_prsenter.h">
       <Filter>Source Files\MVP\ProfilesList</Filter>
+    </ClInclude>
+    <ClInclude Include="storage_map.h">
+      <Filter>Source Files\App\Storage</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

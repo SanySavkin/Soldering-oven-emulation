@@ -25,7 +25,7 @@ int32_t OvenControl::GetTemp()
 {
 	static int32_t temp = 0;
 	temp = oven.GetSetTemp() >= temp ? temp + 1 : temp - 1;
-	temp += (10 * pid.GetCv()) / 1000;
+	//temp += (10 * pid.GetCv()) / 1000;
 	//if (temp < 0) temp = 0;
 	return temp;
 }
