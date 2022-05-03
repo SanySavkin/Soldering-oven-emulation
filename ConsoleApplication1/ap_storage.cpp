@@ -43,7 +43,7 @@ typedef struct
 	uint32_t dt;
 }Pid;
 
-Pid pid = {3.2f, 1.4f, 0.3f, 200};
+Pid pid = {3.2f, 1.7f, 0.3f, 200};
 
 RamStorage::RamStorage()
 {

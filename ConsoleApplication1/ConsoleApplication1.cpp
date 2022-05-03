@@ -51,9 +51,11 @@ static void UpdateView();
 RamStorage stor;
 OvenControl ovProc;
 Profiles prof(&stor);
-Oven oven(&ovProc, &prof);
-WifiModel wifiModel(&stor);
+
 PidModel pidModel(&stor);
+Oven oven(&ovProc, &prof, &pidModel);
+WifiModel wifiModel(&stor);
+
 
 MainDisplay display;
 
@@ -79,12 +81,10 @@ SettingsPresenter setPres(&setAct);
 PidPresenter pidPres(&pidModel, &pidAct);
 
 
-Pid pid(6, 2, 0.9f, 200);
-
+uint32_t debugCount = 0;
 int main()
 {
     TimeStamp::Init();
-    oven.SetPid(&pid);
     prof.Read();
     wifiModel.Read();
     pidModel.Read();
@@ -93,6 +93,7 @@ int main()
 
     while (1)
     {
+        debugCount++;
         buttons.Process();
         oven.Process();
         UpdateView();
@@ -104,7 +105,7 @@ int main()
 static void UpdateView()
 {
     static uint32_t prevTime = 0;
-    if (TimeStamp::GetMillis() - prevTime < 200) return;
+    if (TimeStamp::GetMillis() - prevTime < 500) return;
     prevTime = TimeStamp::GetMillis();
 
     ActManager::Update();
