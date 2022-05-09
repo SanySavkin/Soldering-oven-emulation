@@ -10,15 +10,6 @@
 #include "Main/Contracts/imain_view.h"
 #include "buttons.h"
 
-#include "Main/main_presenter.h"
-#include "Error/error_presenter.h"
-#include "ProfilesList/profile_list_prsenter.h"
-#include "ProfileInfo/profile_info_presenter.h"
-#include "Process/process_presenter.h"
-#include "Wifi/wifi_presenter.h"
-#include "Settings/settings_presenter.h"
-#include "Pid/pid_presenter.h"
-
 #include "Activity/activity_manager.h"
 #include "Activity/main_activity.h"
 #include "Activity/proceess_activity.h"
@@ -28,12 +19,14 @@
 #include "Activity/wifi_activity.h"
 #include "Activity/settings_activity.h"
 #include "Activity/pid_activity.h"
+#include "Activity/profile_edit_activity.h"
+#include "Activity/fw_version_activity.h"
 
 #include "Process/Contracts/iprocess_model.h"
 #include "ap_console_display.h"
 #include "oven_activities_manager.h"
 #include "Common/Model/wifi_model.h"
-#include "Common//Model/pid_model.h"
+#include "Common/Model/pid_model.h"
 
 #include <Windows.h>
 #include <thread>
@@ -43,6 +36,7 @@
 #include "ap_time_stamp.h"
 #include "ap_storage.h"
 #include "ap_oven.h"
+#include "win_sound.h"
 
 
 static void UpdateView();
@@ -51,6 +45,7 @@ static void UpdateView();
 RamStorage stor;
 OvenControl ovProc;
 Profiles prof(&stor);
+WinSound wSnd;
 
 PidModel pidModel(&stor);
 Oven oven(&ovProc, &prof, &pidModel);
@@ -62,24 +57,16 @@ MainDisplay display;
 const IButtons btnDrv = { KeyBoard::IsPressed };
 Buttons buttons(TimeStamp::GetMillis, &btnDrv);
 
-MainActivity mainAct(&display, &buttons);
-ProcessActivity procAct(&display, &buttons);
-ProfilesListActivity profListAct(&display, &buttons);
-ProfilesInfoActivity profInfoAct(&display, &buttons);
-ErrorActivity errorAct(&display, &buttons);
-WifiActivity wifiAct(&display, &buttons);
+MainActivity mainAct(&oven, &display, &buttons);
 SettingsActivity setAct(&display, &buttons);
-PidActivity pidAct(&display, &buttons);
-
-MainPresenter mainPres(&oven, &mainAct);
-ProcessPresenter procPres(&oven, &procAct);
-ProfilesListPresenter profListPres(&prof, &profListAct);
-ProfilesInfoPresenter profInfoPres(&prof, &profInfoAct);
-ErrorPresenter errorPres(&oven, &errorAct);
-WifiPresenter wifiPres(&wifiModel, &wifiAct);
-SettingsPresenter setPres(&setAct);
-PidPresenter pidPres(&pidModel, &pidAct);
-
+ProfilesListActivity profListAct(&prof, &display, &buttons);
+ProfilesInfoActivity profInfoAct(&prof, &display, &buttons);
+ProfilesEditActivity profEditAct(&prof, &display, &buttons, &wSnd);
+ProcessActivity procAct(&oven, &display, &buttons);
+PidActivity pidAct(&pidModel, &display, &buttons);
+WifiActivity wifiAct(&wifiModel, &display, &buttons);
+FwVersionActivity fwVersAct(&display, &buttons);
+ErrorActivity errorAct(&display, &buttons, &wSnd);
 
 uint32_t debugCount = 0;
 int main()
@@ -88,16 +75,16 @@ int main()
     prof.Read();
     wifiModel.Read();
     pidModel.Read();
-    prof.SetProfile(2);
-    ActManager::StartActivity(ACTIVITY_MAIN);
+    ActivityManager::StartActivity(ActivityManager::ACTIVITY_MAIN, NULL);
 
     while (1)
     {
         debugCount++;
+
         buttons.Process();
         oven.Process();
         UpdateView();
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        std::this_thread::sleep_for(std::chrono::milliseconds(4));
     }
 }
 
