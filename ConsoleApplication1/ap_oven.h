@@ -2,7 +2,7 @@
 #define AP_OVEN_H
 
 
-#include "MVP/Common/Model/oven_processor.h"
+#include "Models/oven_processor.h"
 
 
 class OvenControl : public IOvenProcessor

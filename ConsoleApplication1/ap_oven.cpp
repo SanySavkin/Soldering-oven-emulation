@@ -1,7 +1,7 @@
-#include "MVP/Common/Model/oven_processor.h"
+#include "Models/oven_processor.h"
 #include "Regulator/pid_regulator.h"
 #include "ap_time_stamp.h"
-#include "MVP/Common/Model/profiles.h"
+#include "Models/profiles.h"
 #include "ap_oven.h"
 
 #include "Windows.h"

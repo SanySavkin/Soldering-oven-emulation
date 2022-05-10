@@ -5,11 +5,7 @@
 
 #include <iostream>
 
-
-
-#include "Main/Contracts/imain_view.h"
 #include "buttons.h"
-
 #include "Activity/activity_manager.h"
 #include "Activity/main_activity.h"
 #include "Activity/proceess_activity.h"
@@ -22,11 +18,11 @@
 #include "Activity/profile_edit_activity.h"
 #include "Activity/fw_version_activity.h"
 
-#include "Process/Contracts/iprocess_model.h"
+#include "Contracts/iprocess_model.h"
 #include "ap_console_display.h"
 #include "oven_activities_manager.h"
-#include "Common/Model/wifi_model.h"
-#include "Common/Model/pid_model.h"
+#include "Models/wifi_model.h"
+#include "Models/pid_model.h"
 
 #include <Windows.h>
 #include <thread>
